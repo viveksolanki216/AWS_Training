@@ -1,0 +1,35 @@
+
+services:
+  streamlit:
+    image: 205930620783.dkr.ecr.us-east-1.amazonaws.com/qna_streamlit_ollama:latest
+    restart: always
+    #environment:
+    # "OLLMA_BASE_URL=http://ollama:11434"
+    ports:
+    - "8501:8501"
+    volumes:
+    - "/home/ubuntu/logs:/app/logs"
+  ollama:
+    image: ollama/ollama:latest
+    restart: always
+    ports:
+    - "11434:11434"
+    environment:
+    - "OLLAMA_HOST=0.0.0.0"
+    volumes:
+    - "./ollama:/root/.ollama"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+
+
+
+
+
+
+
