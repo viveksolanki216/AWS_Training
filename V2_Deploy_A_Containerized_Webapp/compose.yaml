@@ -1,7 +1,7 @@
 
 services:
   streamlit:
-    image: 205930620783.dkr.ecr.us-east-1.amazonaws.com/qna_streamlit_ollama:latest
+    image: #205930620783.dkr.ecr.us-east-1.amazonaws.com/qna_streamlit_ollama:latest
     restart: always
     #environment:
     # "OLLMA_BASE_URL=http://ollama:11434"

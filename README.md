@@ -21,7 +21,7 @@ be used only for billing and creating new IAM accounts.
 ### IAM Core Concepts:
 Identity an Access Management (IAM) is a web service that helps you securely control access to AWS resources. '
 Resources are the things you create in AWS, such as EC2 instances, S3 buckets, and RDS databases. Users attempts to perform
-"Actions" on resources i.e. S3::CreateBucket. Authorization to perform an Action depends on a policy. A policy is json file 
+"Actions" on resources i.e. S3::CreateBucket. Authorization to perform an Action depends on a policy. A policy is json  file 
 that defines what different users can perform differnt actions.
 
     - Users: End users such as employees of an organization.
