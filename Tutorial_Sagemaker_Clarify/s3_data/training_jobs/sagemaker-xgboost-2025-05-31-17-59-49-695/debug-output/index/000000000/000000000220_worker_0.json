@@ -1,0 +1,1 @@
+{"meta": {"mode": "GLOBAL", "mode_step": 220, "event_file_name": "events/000000000220/000000000220_worker_0.tfevents"}, "tensor_payload": [{"tensorname": "train-logloss", "start_idx": 0, "length": 115}], "shape_payload": []}

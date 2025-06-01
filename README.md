@@ -5,7 +5,9 @@
 
  - Github: https://github.com/aws/amazon-sagemaker-examples/tree/main/end_to_end/fraud_detection
  - Be Better Dev, Youtube Channel: https://www.youtube.com/@BeABetterDev
- - 
+ - AWS Community: https://community.aws/
+ - Sagemaker `ReadTheDocs`: https://sagemaker-examples.readthedocs.io/en/latest/index.html
+ - AWS Documentation: https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html
 
 
 ### AWS Accounts:
