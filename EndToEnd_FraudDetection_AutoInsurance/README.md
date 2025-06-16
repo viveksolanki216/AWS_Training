@@ -68,12 +68,19 @@ Estimators are high level interface (API) for training. It makes it very easy to
 
 ###### Directory Structure inside script mode container.
 /opt/ml/
+
 ├── input/
+
 │   ├── config/           # Input config files (hyperparams, resource config)
+
 │   ├── data/
+
 │   │   ├── train/        # Your input channel
+
 │   │   └── validation/   # Another channel
+
 ├── model/                # Where to save trained model
+
 ├── output/               # For evaluation metrics or custom output
 
 One Can access the train channel inside the script as `os.environ.get("SM_CHANNEL_TRAIN")` or directly harcoding the path as '/opt/ml/input/data/train'.
@@ -113,9 +120,9 @@ Similar to directories, for better discovery of models they can be organized in 
 
 In SageMaker Pipelines, each step is executed as a **separate process**, usually on a **different instance**, using its own **container**. This may seem unnecessary at first — why not run all steps on a single machine? Here's why this design is actually powerful and flexible.
 
-### 🧠 Design Philosophy
+### Design Philosophy
 Each pipeline step is designed to be **modular, scalable, and optimized for its task**, often requiring different compute environments or frameworks.
-#### 💡 Key Reasons
+#### Key Reasons
 
 ##### 1. Modularity
 Each step can use a different framework or script:
@@ -125,8 +132,6 @@ Each step can use a different framework or script:
 
 Each container is self-contained and runs independently.
 
----
-
 ##### 2. Optimized Compute Resources
 Different steps often require different resources:
 - **Processing**: CPU-heavy (e.g. `ml.m5.xlarge`)
@@ -135,16 +140,12 @@ Different steps often require different resources:
 
 Running everything on a single instance would be inefficient and expensive.
 
----
-
 ##### 3. Failure Isolation
 Each step runs independently. If one fails:
 - The pipeline can retry just that step
 - You don’t need to rerun the entire workflow
 
 This makes debugging and reliability much better.
-
----
 
 ##### 4. Caching & Reusability
 SageMaker can **cache the results of completed steps**:
@@ -153,14 +154,11 @@ SageMaker can **cache the results of completed steps**:
 
 This saves both time and cost.
 
----
 
 ##### 5. Parallelism
 Steps that are not dependent on each other can:
 - Run in parallel
 - Improve total pipeline execution speed
-
----
 
 #### 🧰 But Can I Combine Steps?
 Yes, you can combine multiple logical steps into a single script if needed:
