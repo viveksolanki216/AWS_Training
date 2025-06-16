@@ -24,5 +24,22 @@ References: https://github.com/aws-samples/amazon-sagemaker-feature-store-exampl
  - Ingestion: The process of adding new records to a feature group, typically performed using the PutRecord API.
 
 
-# How does Feature Store works?
+## How does Feature Store works?
 i.e. where it stores the data, can we analyze data in featture store etc.
+
+
+## SageMaker Feature Store Athena Query: Metadata Columns
+
+When querying **SageMaker Feature Store** using **Amazon Athena**, the output includes additional metadata columns automatically managed by the system. These help with record tracking, versioning, and soft deletes.
+
+---
+
+## 📄 Metadata Columns in Athena Output
+
+| Column Name            | Type      | Description |
+|------------------------|-----------|-------------|
+| `write_time`           | `bigint`  | The timestamp (in epoch milliseconds) when the feature record was **persisted** to the Feature Store. Useful for identifying the latest record version. |
+| `api_invocation_time` | `bigint`  | The timestamp (in epoch milliseconds) when the `PutRecord` API was **called**. May differ from `write_time` due to batching or delays. |
+| `is_deleted`           | `boolean` | Indicates whether the record has been **soft deleted**. <br>`true` = deleted, `false` = active. |
+
+---
