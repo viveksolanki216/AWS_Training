@@ -32,6 +32,8 @@ if __name__ == "__main__":
     print("Reading Train Data From", os.path.join(args.train_data_path, args.train_file))
     train = pd.read_csv(os.path.join(args.train_data_path, args.train_file))
     print(f"Training data shape: {train.shape}")
+    # Only select numeric factors
+    train = train.select_dtypes(['int','float'])
     for col in train.select_dtypes(include=['object']).columns:
         train[col] = pd.to_numeric(train[col], errors='coerce')
     #print(train.dtypes)
@@ -46,12 +48,14 @@ if __name__ == "__main__":
     target = args.target_var
     train_target = train.pop(target)
     #test_target = test.pop(target)
+    
 
     if args.features == None:
         features = train.columns.tolist()
     else:
         features = args.features.split('|')
 
+    print(features)
     # conver data to DMatrix
     dtrain = xgb.DMatrix(train[features], label=train_target)
 
