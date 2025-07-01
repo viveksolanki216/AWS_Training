@@ -1,2 +1,1 @@
-idea/
-EndToEndProjects/NYC_Taxi_Data_Prediction/data/raw_data
+.idea/ # hidden directory for JetBrains IDEs
