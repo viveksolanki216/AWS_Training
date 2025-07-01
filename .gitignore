@@ -1,2 +1,3 @@
 .idea/
 .Tutorial_Sagemaker_Clarify/s3_data/clarify-explainability/explanations_shap/out.csv
+.EndToEndProjects/NYC_Taxi_Data_Prediction/data/raw_data
