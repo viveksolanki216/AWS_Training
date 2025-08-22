@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4eb4f3ca-e946-408d-9f36-2fb102983aa5" name="Changes" comment="Adding certificate details2" />
+    <list default="true" id="4eb4f3ca-e946-408d-9f36-2fb102983aa5" name="Changes" comment="Adding certificate details2">
+      <change afterPath="$PROJECT_DIR$/Data_Storage_Ingestion_And_Processing/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EndToEndProjects/FraudDetection_AutoInsurance/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/EndToEndProjects/FraudDetection_AutoInsurance/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EndToEndProjects/FraudDetection_AutoInsurance/scripts/data_processing_script.py" beforeDir="false" afterPath="$PROJECT_DIR$/EndToEndProjects/FraudDetection_AutoInsurance/scripts/data_processing_script.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EndToEndProjects/NYC_Taxi_Data_Prediction/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EndToEndProjects/NYC_Taxi_Data_Prediction/src/Download_Data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/StorageAndIngestion/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/StorageAndIngestion/Tutorial_Feature_Store/01_CreateFeatureGroup&amp;UploadData.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Data_Storage_Ingestion_And_Processing/Tutorial_Feature_Store/01_CreateFeatureGroup&amp;UploadData.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StorageAndIngestion/Tutorial_Feature_Store/02_Athena_To_Fetch&amp;ManipulateData.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Data_Storage_Ingestion_And_Processing/Tutorial_Feature_Store/02_Athena_To_Fetch&amp;ManipulateData.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StorageAndIngestion/Tutorial_Feature_Store/09_DeleteResources.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Data_Storage_Ingestion_And_Processing/Tutorial_Feature_Store/09_DeleteResources.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StorageAndIngestion/Tutorial_Feature_Store/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Data_Storage_Ingestion_And_Processing/Tutorial_Feature_Store/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -109,6 +121,15 @@
       <workItem from="1749617576181" duration="24329000" />
       <workItem from="1750920625860" duration="1223000" />
       <workItem from="1751089867787" duration="35971000" />
+      <workItem from="1751397734628" duration="10293000" />
+      <workItem from="1751604244193" duration="6476000" />
+      <workItem from="1753639087534" duration="2027000" />
+      <workItem from="1753857223559" duration="4275000" />
+      <workItem from="1754677543116" duration="2286000" />
+      <workItem from="1754799027707" duration="4000" />
+      <workItem from="1754815430493" duration="19000" />
+      <workItem from="1755754297467" duration="1015000" />
+      <workItem from="1755845153806" duration="1144000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />

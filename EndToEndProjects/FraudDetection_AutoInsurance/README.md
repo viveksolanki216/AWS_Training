@@ -4,7 +4,7 @@
 References: 
 - https://sagemaker-examples.readthedocs.io/en/latest/end_to_end/fraud_detection/1-data-prep-e2e.html
 
-Steps:
+Steps Covered Here:
 1. Data Exploration in Jupyter Notebook
 2. Data Processing Using Sagemaker Data Wrangler
 3. Train Model using Custom Training Job (Script Mode)
@@ -14,7 +14,7 @@ Steps:
 
 
 ## 0. Data Exploration
-### Using Jupter Lab (Notebook)
+Using Jupter Lab (Notebook)
 
 ## 1. Data Processing 
 ### SageMaker DataWrangler 
@@ -28,7 +28,7 @@ Steps:
 
 ## 2. Training - Custom Training Job (Script Mode)
 
-### from sagemaker.xgboost.estimator import XGBoost v/s from sagemaker.xgboost.model import XGBoostModel?
+##### Difference in sagemaker.xgboost.estimator.XGBoost v/s sagemaker.xgboost.model.XGBoostModel?
 XGBoost is an Estimator that helps train a model while XGBoostModel is an instance to a already trained model for inference/deployment, i.e. If you already have a model on s3 and want to serve it use XGBoostModel. 
 
 ### Sagemaker Estimators
@@ -39,14 +39,14 @@ Estimators are high level interface (API) for training. It makes it very easy to
  - What compute resources
  - Where to store data and model artifacts
 
-##### Different Modes for Training Jobs
+#### Different Modes for Training Jobs
  - **Built-in Algorithms:** These uses Sagemaker optimized containers for popular ML algo, no training scripts are needed. i.e. LinearLearner, XGBoost, KMeans
  - **Framework-Estimatoes:** (Script Mode): Use your own training script with a pre-built container for popular ML/DL frameworks. i.e. PyTorch, Tensorflow, SKLearn, HuggingFace
  - **Custom Containers:** Use any docker image you create. Gives full control. i.e Estimator
  - **Automatic Model Tuning:** Wrap any Estimtor with a HyperparameterTuner
  - **Local Model:** Almost all Estimators can run in "local model" just give "instance_type='local'". 
 
-##### Why using a Sagemaker Estimators?
+#### Why using a Sagemaker Estimators?
 - Managed Training Infrastructure
     - You don't need to: Provision an EC2 instance, SSH into them, install package manually and cleanup, retire after the work is done. This is all managed by Estimators.
 - Automatic S3 handling: No need to manually output data to S3, just provide the s3 location
@@ -62,21 +62,28 @@ Estimators are high level interface (API) for training. It makes it very easy to
     - `predictor = estimator.deploy(initial_instance_count=1, instance_type='ml.m5.large')` creates a fully managed HTTPS inference endpoint with scaling, logging, and monitoring.
     - If you train manually, deploying to production becomes a manual DevOps task.
 
-##### Notes while using Estimators:
+#### Notes while using Estimators:
 - Training scripts (running on any instance):
    - Can read files from a s3 location
    - But can't write them. We need to write the output files into the container hosted on the training/EC2 instance itself and manually write/upload the files using s3 objects.
    - Or just use the default location '/opt/ml' of the instance mentioned in different environment variables i.e. "SM_MODEL_DIR" = '/opt/ml/model' for model output, "SM_OUTPUT_DATA_DIR" = 'opt/ml/output/data/' for output data.
    - Sagemaker collects everything in '/opt/ml/model', compresses it and upload it to s3 location specified in the Estimator
 
-###### Directory Structure inside script mode container.
+##### Directory Structure inside script mode container.
 /opt/ml/
+
 ├── input/
+
 │   ├── config/           # Input config files (hyperparams, resource config)
+
 │   ├── data/
+
 │   │   ├── train/        # Your input channel
+
 │   │   └── validation/   # Another channel
+
 ├── model/                # Where to save trained model
+
 ├── output/               # For evaluation metrics or custom output
 
 One Can access the train channel inside the script as `os.environ.get("SM_CHANNEL_TRAIN")` or directly harcoding the path as '/opt/ml/input/data/train'.
@@ -91,11 +98,11 @@ https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry.html
 - Create a model-package using training job (this will create a model in "Registered Models")
 - Deploy the model on an endpoint (this will create a model in "Deployable Models")
 
-### Model Package Group: 
+#### Model Package Group: 
 A collection of different version of the same model (not exactly same, but different models for same problem statements).
-### Model Package:
+#### Model Package:
 A particular version of the model.
-### Model Registry Collections:
+#### Model Registry Collections:
 https://docs.aws.amazon.com/sagemaker/latest/dg/modelcollections.html
 
 Similar to directories, for better discovery of models they can be organized in differnt collections (could be nested). Different models for same domain of problem can go in one collection i.e. same model algorithms/architeture i.e. NLP Models, Speech Recognition Models. Transformer Models etc.
@@ -111,6 +118,9 @@ Similar to directories, for better discovery of models they can be organized in 
 
 
 # 6. End to End Pipeline
+
+## Sagemaker Pipeline
+
 
 ## Why Each Step Runs Separately in a SageMaker Pipeline
 
